@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,8 +13,8 @@ namespace PokeApiCore
         private const double InchesPerDecimetre = 3.937;
         private int height1;
 
-        public int id { get; set; }
-        public string name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The base experience gained for defeating this Pokémon.
@@ -23,7 +24,7 @@ namespace PokeApiCore
         /// <summary>
         /// The height of this Pokémon in inches.
         /// </summary>
-        public int height 
+        public int Height 
         { 
             // height values are stored as decimetres
             get => (int)Math.Ceiling(height1 * InchesPerDecimetre); 
@@ -39,7 +40,7 @@ namespace PokeApiCore
         /// <summary>
         /// The weight of this Pokémon in hectograms.
         /// </summary>
-        public int weight { get; set; }
+        public int Weight { get; set; }
         public Ability[] abilities { get; set; }
         public Form[] forms { get; set; }
         public Game_Indices[] game_indices { get; set; }
@@ -47,7 +48,7 @@ namespace PokeApiCore
         public string location_area_encounters { get; set; }
         public Move[] moves { get; set; }
         public Species species { get; set; }
-        public Sprites sprites { get; set; }
+        public Sprites Sprites { get; set; }
         public Stat[] stats { get; set; }
         public Type[] types { get; set; }
     }
@@ -66,7 +67,9 @@ namespace PokeApiCore
         public string front_female { get; set; }
         public string front_shiny_female { get; set; }
         public string back_shiny { get; set; }
-        public string front_default { get; set; }
+
+        [JsonProperty("front_default")]
+        public string FrontDefault { get; set; }
         public string front_shiny { get; set; }
     }
 
