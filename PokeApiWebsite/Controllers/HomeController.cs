@@ -34,14 +34,14 @@ namespace PokeApiWebsite.Controllers
 
             var entry = new PokedexEntryViewModel()
             {
-                Id = result.id,
+                Id = result.Id,
                 Name = result.Name,
                 Height = result.Height.ToString(),
                 Weight = result.Weight.ToString(),
-                PokedexImageUrl = result.sprites.FrontDefault,
+                PokedexImageUrl = result.Sprites.FrontDefault,
                 MoveList = resultMoves
             };
-
+            entry.Name = entry.Name.FirstCharToUpper();
 
             return View(entry);
         }
