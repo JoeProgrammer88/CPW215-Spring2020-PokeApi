@@ -77,14 +77,14 @@ namespace PokeApiCore
     {
         public bool is_hidden { get; set; }
         public int slot { get; set; }
-        public Ability1 ability { get; set; }
+        public AbilityInfo ability { get; set; }
     }
 
     /// <summary>
     /// Name of the ability and link to more in-depth
     /// information about the ability
     /// </summary>
-    public class Ability1
+    public class AbilityInfo
     {
         public string name { get; set; }
         public string url { get; set; }
